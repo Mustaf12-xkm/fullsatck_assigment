@@ -9,7 +9,7 @@ const EmployeList = ({unVerfiedEmployees, setUnVerfiedEmployees,  updated,setUpd
 
 
   return (
-    <div className="w-[50%] mx-auto">
+    <div className="w-[90%] mx-auto">
       <h2 className="text-lg font-bold mb-4 text-center">
         Waiting Interview List List
       </h2>

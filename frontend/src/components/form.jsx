@@ -24,7 +24,7 @@ const handlesubmit = async(e) => {
 
 };
   return (
-    <div className="container mx-auto py-8 w-[50%]">
+    <div className="container mx-auto py-8 w-[90%]">
       <form onSubmit={handlesubmit} className="mb-4">
         <div className="flex items-center">
           <input
