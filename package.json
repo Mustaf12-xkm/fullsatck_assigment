@@ -1,0 +1,28 @@
+{
+  "name": "mernstact-assigment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./backend/app.js",
+    "server": "nodemon ./backend/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": " npm run dev --prefix frontend",
+    "both": "concurrently \"npm run client  \" \" npm run server \" ",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+      },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
