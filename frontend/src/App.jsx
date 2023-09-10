@@ -8,47 +8,52 @@ function App() {
   const [verifedEmployees, setVerifedEmployees] = useState([]);
   const [updated, setUpdated] = useState(false);
 
-  useEffect(() => {
-    const fetchUnverifedEmployees = async () => {
-      try {
-        const { data } = await axios.get("/api/v1/test/get-employes");
+  useEffect(
+    () => {
+      const fetchUnverifedEmployees = async () => {
+        try {
+          const { data } = await axios.get("/api/v1/test/get-employes");
 
-        setUnVerfiedEmployees(data.employee);
-      } catch (error) {
-        console.error("Error fetching employees:", error.message);
-      }
-    };
+          setUnVerfiedEmployees(data.employee);
+        } catch (error) {
+          console.error("Error fetching employees:", error.message);
+        }
+      };
 
-    fetchUnverifedEmployees();
-  }, [updated]);
+      fetchUnverifedEmployees();
+    },
+    [updated]
+  );
 
-  useEffect(() => {
-    const fetchVerifiedEmployees = async () => {
-      try {
-        const { data } = await axios.get("/api/v1/test/get-verified-employes");
-        // console.log(response.data)
-        setVerifedEmployees(data.employees);
-      } catch (error) {
-        console.error("Error fetching employees:", error.message);
-      }
-    };
+  useEffect(
+    () => {
+      const fetchVerifiedEmployees = async () => {
+        try {
+          const { data } = await axios.get(
+            "/api/v1/test/get-verified-employes"
+          );
+          // console.log(response.data)
+          setVerifedEmployees(data.employees);
+        } catch (error) {
+          console.error("Error fetching employees:", error.message);
+        }
+      };
 
-    fetchVerifiedEmployees();
-  }, [updated]);
+      fetchVerifiedEmployees();
+    },
+    [updated]
+  );
 
   return (
     <div>
-      <Form updated={updated} setUpdated={setUpdated}/>
+      <Form updated={updated} setUpdated={setUpdated} />
       <EmployeList
         unVerfiedEmployees={unVerfiedEmployees}
-        setUnVerfiedEmployees={setUnVerfiedEmployees}
-       
         updated={updated}
         setUpdated={setUpdated}
       />
       <Employeverified
         verifedEmployees={verifedEmployees}
-        setVerifedEmployees={setVerifedEmployees}
         updated={updated}
         setUpdated={setUpdated}
       />

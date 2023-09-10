@@ -7,9 +7,9 @@ function verifiedlist({ data, updated, setUpdated }) {
         `/api/v1/test/update-employes/${data._id}`,
         { verified: false }
       );
-      console.log("aksjhakjhsakj")
+  
       setUpdated(!updated);
-      console.log(response);
+
     } catch (error) {
       console.error("Error updating employees:", error.message);
     }
